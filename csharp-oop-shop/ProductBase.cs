@@ -24,8 +24,11 @@ public class Product
 
     public string GetExtendedName()
     {
-        return $"{Code}-{Name}";
+        return $"{GetPaddedCode()}-{Name}";
     }
 
-
+    public string GetPaddedCode()
+    {
+        return Code.ToString().PadLeft(8, '0');
+    }
 }
