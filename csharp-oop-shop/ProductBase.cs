@@ -1,9 +1,12 @@
 ﻿
+using System.Security.Cryptography;
+
 public class Product
 {
-    public Product(long code)
+    public Product()
     {
-        this.Code = code;
+        var random = new Random();
+        Code = random.Next(1,957249);
     }
 
     public long Code { get; private set; }
@@ -31,4 +34,5 @@ public class Product
     {
         return Code.ToString().PadLeft(8, '0');
     }
+
 }
